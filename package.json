@@ -1,0 +1,14 @@
+{
+  "name": "gs-prototype",
+  "version": "1.0.0",
+  "description": "A prototype for a gaussian splatting application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Erpenstein",
+  "license": "ISC",
+  "dependencies": {
+    "@mkkellogg/gaussian-splats-3d": "^0.4.5"
+  }
+}
