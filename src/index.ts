@@ -1,7 +1,22 @@
 import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
-import { BoxGeometry, Mesh, MeshBasicMaterial, PerspectiveCamera, Renderer, Scene, WebGLRenderer } from 'three';
+import { BoxGeometry, Clock, Mesh, MeshBasicMaterial, PerspectiveCamera, Renderer, Scene, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './style.scss';
+
+let n_frames = 0;
+let countedDelta = 0;
+const clock = new Clock();
+
+const updateFPS = () => {
+    if (countedDelta < 1) {
+        countedDelta = countedDelta + clock.getDelta();
+        n_frames = n_frames + 1;
+    } else {
+        document.getElementById('fps').innerText = n_frames.toString();
+        countedDelta = clock.getDelta() - Math.abs(1 - countedDelta);
+        n_frames = 1;
+    }
+}
 
 const main = () => {
     const canvas = document.getElementById('canvas');
@@ -41,6 +56,8 @@ const main = () => {
 
         controls.update();
         renderer.render(threeScene, camera);
+
+        updateFPS();
     };
     requestAnimationFrame(animate);
 };
