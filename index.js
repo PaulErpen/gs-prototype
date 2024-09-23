@@ -7,6 +7,8 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', (req, res) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
     res.sendFile(path.join(__dirname, 'static', 'app.html'));
 });
 

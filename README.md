@@ -1,15 +1,7 @@
-# 🚀 Welcome to your new awesome project!
+# GS Prototype
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
+Serve using:
 
 ```
-yarn build
+npm run build:dev && npm start
 ```
-
-to bundle your application
