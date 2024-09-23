@@ -37,8 +37,6 @@ const main = () => {
         controls.update();
         renderer.render(threeScene, camera);
     };
-
-    alert("HELLO");
 };
 
-main();
+document.addEventListener("DOMContentLoaded", main);
